@@ -12,7 +12,7 @@ const Table = ({ input, setTypes, activeTypes, setTiers, activeTiers, activeSoci
 	const data = useMemo(() => {
 		return datas.filter((el) => {
 			let cond = false || defferedSocials.length === 0;
-			const firstCond = el.Name.toLowerCase().includes(defferedInput);
+			const firstCond = el.Name.toLowerCase().includes(defferedInput?.toLowerCase());
 			const secondCond = defferedVal.includes(el.type) || defferedVal.length === 0;
 			const thirdCond = defferedTier.includes(el.Tier) || defferedTier.length === 0;
 			const keys = Object.keys(el.social);
